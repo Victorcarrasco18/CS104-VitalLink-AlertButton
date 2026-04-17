@@ -1,4 +1,3 @@
-
 import time
 import requests
 import RPi.GPIO as GPIO
@@ -6,8 +5,8 @@ import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(7, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
-BOT_TOKEN = "8615568979:AAEpzTooWKtefSZSq34evHcj2e_SKm-uqv4"
-CHAT_ID = "8534410115"
+BOT_TOKEN = "YOUR_BOT_TOKEN"
+CHAT_ID = "YOUR_CHAT_ID"
 
 button_pressed = False
 
@@ -24,18 +23,4 @@ while True:
     elif GPIO.input(7) == GPIO.LOW:
         button_pressed = False
 
-    time.sleep(0.1)import time
-import RPi.GPIO as GPIO
-GPIO.setmode(GPIO.BOARD)
-GPIO.setup(7, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-
-button_pressed = False
-while True:
-    if GPIO.input(7) == GPIO.HIGH and not button_pressed:
-        print("Someone pressed the alert button!")
-        button_pressed = True
-    elif GPIO.input(7) == GPIO.LOW:
-        button_pressed = False
     time.sleep(0.1)
-
-
